@@ -1,0 +1,36 @@
+
+<html ng-app="myApp">
+    <head>
+<script src="angular.js"></script>
+ </head>
+<body >
+    <div ng-controller="MainCtrl">
+    <h1> ClockApp   </h1>
+
+    <p ng-if="hourOfDay <= 12"> Good Morning</p>
+    <p ng-if="hourOfDay > 12 && hourOfDay < 17" > Good Afternoon</p>
+    <p ng-if="hourOfDay >= 17"> Good Evening</p>
+    <p> The current time is  : {{month}} {{hourOfDay}}</p>
+    
+    </div>
+
+<script>
+   var module =  angular.module ("myApp", []);
+   module.controller("MainCtrl" , Main);
+
+   function Main($scope)
+   {
+       
+       console.log(angular);
+       $scope.hourOfDay = 9;
+       $scope.month = "March";
+       console.log($scope.hourOfDay);
+   }
+
+    
+    </script>
+
+</body>
+
+        
+    </html>

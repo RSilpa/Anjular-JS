@@ -1,0 +1,106 @@
+
+<html ng-app="ContactApp">
+    <head>
+        <title>My Contact App </title>
+        <script src='angular.js'></script>
+           <script src="app.js"></script>
+           <script src="Contactcontroller.js"></script>
+           <script src="ContactsData.service.js"></script>
+          
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+           
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+</head>
+
+
+<body >
+    <h1> </h1>
+    <h1 >my Contact App </h1>
+
+   <div class='container' ng-controller="ContactCtrl as ctrl">
+        <div class="row">
+              <div class="call-mg-2">
+      
+        <ul class="list-group">
+                
+                <li class="list-group-item"  ng-repeat="contact in ctrl.contacts" ng-click="ctrl.selectContact($index)">
+
+                   <span>{{contact.name.first + "  " +  contact.name.last}}</span>   
+                </li>
+
+               
+            </ul> 
+</div> 
+             
+
+<div class="call-mg-2">
+
+        <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img ng-src="{{ctrl.selectedContact.picture.thumbnail}}">
+                        </a>
+                    </div>
+                </div>
+                    <div class="media-body">
+                            <div class="media-heading">
+                                
+                                <span>  {{ctrl.selectedContact.name.first + "  " + ctrl.selectedContact.name.last}} </span> 
+                              </div>
+                                <div>  
+                           <button ng-click="ctrl.saveUser()">Save Info</button>
+                                                              
+
+<div>
+                     
+
+                             <p>
+                                    <span> Street : </span> 
+                             
+                                <span >   {{ctrl.selectedContact.location.street}}      </span>   
+                                <input type="text"  ng-model="ctrl.selectedContact.location.street"> 
+                          
+                            </p>
+                            <p>
+                                    <span> City : </span> 
+                             
+                                <span>   {{ctrl.selectedContact.location.city}}
+                                </span> 
+                                <input type="text"  ng-model="ctrl.selectedContact.location.city"> 
+
+                            </p>
+                            <p>
+                                    <span> State : </span> 
+                             
+                                <span>   {{ctrl.selectedContact.location.state}}
+                                </span> 
+                                <input type="text"  ng-model="ctrl.selectedContact.location.state"> 
+
+                            </p>
+                            <p>
+                                </p></div>
+                                <div>
+                                    <p>
+                                    <span>postcode: </span> 
+                             
+                                <span>   {{ctrl.selectedContact.location.postcode}}
+                                </span> 
+                                <input type="text"  ng-model="ctrl.selectedContact.location.postcode"> 
+                            </p>
+                                        </div>
+
+
+                               
+ 
+
+</div>   
+
+
+</body>
+
+        
+    </html>
